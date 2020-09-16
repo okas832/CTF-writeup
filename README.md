@@ -1,6 +1,6 @@
 # CTF Write-Up
 
-This is my writeup for CTF challenges. Mostly the category is reversing. 
+This is my writeup for CTF challenges. Most of all will be reversing. 
 
 ## List
 
