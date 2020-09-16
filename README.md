@@ -8,10 +8,7 @@ This is my writeup for CTF challenges. Mostly the category is reversing.
 
 #### InterKosenCTF
 
-[harmagedon](./2020./InterKosenCTF/harmagedon)
-
-[in question](./2020./InterKosenCTF/in question)
-
-[stratum](./2020./InterKosenCTF/stratum)
-
-[trilemma](./2020./InterKosenCTF/trilemma)
+* [harmagedon](./2020/InterKosenCTF/harmagedon)
+* [in question](./2020/InterKosenCTF/in%20question)
+* [stratum](./2020/InterKosenCTF/stratum)
+* [trilemma](./2020/InterKosenCTF/trilemma)
