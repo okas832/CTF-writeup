@@ -84,7 +84,10 @@ def solve(a):  # a is 32 length array,
     return t
 ```
 
+Let ![formula](https://render.githubusercontent.com/render/math?math=f(x)=\sum_{i=1}^{32}%20a_{i}{x}^{i})
+
 It's a good guess to have ![formula](https://render.githubusercontent.com/render/math?math=a_{32}) as a "fixed point" of f, since iterations of f will stay at ![formula](https://render.githubusercontent.com/render/math?math=a_{32}) if we arrive there.
+
 Therefore, we solve f(![formula](https://render.githubusercontent.com/render/math?math=a_{32})) =  ![formula](https://render.githubusercontent.com/render/math?math=a_{32}), which we can easily recover ![formula](https://render.githubusercontent.com/render/math?math=a_{0}) as ![formula](https://render.githubusercontent.com/render/math?math=a_{32}-\sum_{i=1}^{32}%20a_{i}{a_{32}}^{i})
 
 Applying to all arrays to calculate flag...
