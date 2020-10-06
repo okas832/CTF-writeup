@@ -6,7 +6,7 @@ Apk that use Xamarin; app platform for building apps with .NET
 
 Jadx doesn't help me to find important routine from java files. Instead, found that this was build with Xamarin.
 
-You can check them with decompress apk and check libraries in lib/armeabi-v7a/
+You can check them by decompressing apk and checking libraries in lib/armeabi-v7a/
 
 There seems no dll file in the apk, but found the tool to extract DLL files from Xamarin apk.
 
