@@ -17,3 +17,7 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 
 * [reversing-is-amazing](./2020/TokyoWesternCTF/reversing_is_amazing)
 * [tamarin](./2020/TokyoWesternCTF/Tamarin)
+
+#### SECCON CTF
+
+* [fixer](./2020/SECCON/fixer)
