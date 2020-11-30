@@ -46,8 +46,8 @@ void fetch_inst(uint64_t inst, uint64_t *sysno, uint64_t *arg, uint64_t *reg)
                 break;
             default:
                 return;
-		}
-	}
+         }
+    }
     return;
 }
 
@@ -57,7 +57,7 @@ void run(uint64_t *code)
     uint64_t arg[6];
     uint64_t reg[0x10];
     
-	memset(reg, 0, 0x80);
+    memset(reg, 0, 0x80);
     while ( code[reg[15]] )
     {
         fetch_inst(code[mem[15]], &sysno, arg, reg);
@@ -298,20 +298,20 @@ I'll pass analyzing the summarized code here. Only result.
 ```c
 int f(unsigned int a, unsigned int b, unsigned int c, unsigned int d, unsigned int e, unsigned int x1, unsigned int x2)
 {
-	unsigned int k = e;
-	int i;
+    unsigned int k = e;
+    int i;
     unsigned int i1, i2; // input
     i1 = input();
     i2 = input(); // actual program read whole input. this is just for understanding
-	for (i = 0; i < 32; i++)
-	{
+    for (i = 0; i < 32; i++)
+    {
         i1 = i1 + (((i2 << 0x4) + a) ^ ((i2 >> 0x5) + b) ^ (i2 + k));
-		i2 = i2 + (((i1 << 0x4) + c) ^ ((i1 >> 0x5) + d) ^ (i1 + k));
-		k += e;
-	}
-	if(x1 != i1 || x2 != i2)
+        i2 = i2 + (((i1 << 0x4) + c) ^ ((i1 >> 0x5) + d) ^ (i1 + k));
+        k += e;
+    }
+    if(x1 != i1 || x2 != i2)
         return 0;
-	return 1;
+    return 1;
 }
 
 int main()
@@ -322,9 +322,9 @@ int main()
 	   f(0x33f33fe0, 0xf9de7e36, 0xe9ab109d, 0x8d4f04b2, 0xd3c45f8c, 0x58aae351, 0x92012a14))
     {
         // correct!
-	}
+    }
     // fail...
-	return 0;
+    return 0;
 }
 ```
 
@@ -337,32 +337,32 @@ And this is a solution.
 
 void f(unsigned int a, unsigned int b, unsigned int c, unsigned int d, unsigned int e, unsigned int x1, unsigned int x2)
 {
-	unsigned int k = e * 0x20;
-	int i;
-	for (i = 0; i < 32; i++)
-	{
-		x2 = x2 - (((x1 << 0x4) + c) ^ ((x1 >> 0x5) + d) ^ (x1 + k));
-		x1 = x1 - (((x2 << 0x4) + a) ^ ((x2 >> 0x5) + b) ^ (x2 + k));
-		k -= e;
-	}
-	printf("%c%c%c%c%c%c%c%c",  *(((char*)&x1) + 0),
-		                        *(((char*)&x1) + 1),
-								*(((char*)&x1) + 2),
-								*(((char*)&x1) + 3),
-								*(((char*)&x2) + 0),
-								*(((char*)&x2) + 1),
-								*(((char*)&x2) + 2),
-								*(((char*)&x2) + 3)
-		);
+    unsigned int k = e * 0x20;
+    int i;
+    for (i = 0; i < 32; i++)
+    {
+        x2 = x2 - (((x1 << 0x4) + c) ^ ((x1 >> 0x5) + d) ^ (x1 + k));
+        x1 = x1 - (((x2 << 0x4) + a) ^ ((x2 >> 0x5) + b) ^ (x2 + k));
+        k -= e;
+    }
+    printf("%c%c%c%c%c%c%c%c",  *(((char*)&x1) + 0),
+		                *(((char*)&x1) + 1),
+				*(((char*)&x1) + 2),
+				*(((char*)&x1) + 3),
+				*(((char*)&x2) + 0),
+				*(((char*)&x2) + 1),
+				*(((char*)&x2) + 2),
+				*(((char*)&x2) + 3)
+	  );
 }
 
 int main()
 {
-	f(0x69a33fff, 0x468932dc, 0x2b0b575b, 0x1e8b51cc, 0x51fdd41a, 0x152ceed2, 0xd6046dc3);
-	f(0x32e57ab6, 0x7785df55, 0x688620f9, 0x8df954f3, 0x5c37a6db, 0x4a9d3ffd, 0xbb541082);
-	f(0xaca81571, 0x2c19574f, 0x1bd1fc38, 0x14220605, 0xb4f0b4fb, 0x632a4f78, 0xa9cb93d);
-	f(0x33f33fe0, 0xf9de7e36, 0xe9ab109d, 0x8d4f04b2, 0xd3c45f8c, 0x58aae351, 0x92012a14);
-	return 0;
+    f(0x69a33fff, 0x468932dc, 0x2b0b575b, 0x1e8b51cc, 0x51fdd41a, 0x152ceed2, 0xd6046dc3);
+    f(0x32e57ab6, 0x7785df55, 0x688620f9, 0x8df954f3, 0x5c37a6db, 0x4a9d3ffd, 0xbb541082);
+    f(0xaca81571, 0x2c19574f, 0x1bd1fc38, 0x14220605, 0xb4f0b4fb, 0x632a4f78, 0xa9cb93d);
+    f(0x33f33fe0, 0xf9de7e36, 0xe9ab109d, 0x8d4f04b2, 0xd3c45f8c, 0x58aae351, 0x92012a14);
+    return 0;
 }
 ```
 
