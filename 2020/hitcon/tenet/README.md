@@ -31,7 +31,7 @@ We cannot use both register and memory. But we can save that data in indirect wa
 First, we can make simple format for this.
 
 ```asm
-	xor rcx, rcx
+    xor rcx, rcx
 label:
     mov rdi, 0x2170000
     add rdi, rcx
