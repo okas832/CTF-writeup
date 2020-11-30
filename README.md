@@ -21,3 +21,8 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 #### SECCON CTF
 
 * [fixer](./2020/SECCON/fixer)
+
+#### HITCON CTF
+
+* [SOP](./2020/hitcon/sop)
+* [tenet](./2020/hitcon/tenet)
