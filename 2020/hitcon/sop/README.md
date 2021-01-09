@@ -140,7 +140,7 @@ Setting up signal handler for SIGSYS.
     syscall              ; sigreturn
 ```
 
-That `0x3f8495f5793a342c` has no meaning. It will change that value later.
+That `0x3f8495f5793a342c` has no meaning right now, but will be modify.
 
 ### 3. seccomp
 
