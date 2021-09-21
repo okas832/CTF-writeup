@@ -5,7 +5,7 @@ Reversing, 170 points
 [Download](./sugar.tar.gz)
 
 # Analysis
-There is an OVMF firmware. It gets a input and checks it.
+There is an OVMF firmware. It gets a input and checks it.  
 In `disk.img`, there is one binary named BOOTX64.ELF(extracted with 7zip). This binary has core logic to get a flag.
 
 Thankfully, there are some hardcoded error message that helps to analyze the function.
@@ -50,7 +50,7 @@ else
 }
 ```
 
-Can know iv and key from binary, but have to get encrypted data from somewhere else.
+Can know iv and key from binary, but have to get encrypted data from somewhere else.  
 There is `EFI PART` in disk, so able to guess that encrypted date is in it.
 
 ```

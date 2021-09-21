@@ -2,14 +2,16 @@
 Reversing, 360 points
 
 ## Description
+```
 A flag checker! Mark the "Flag checker" on your CTF Reversing BINGO !!
+```
 [Download](./tnzr.tar.gz)
 
 ## Analyze
-We can move cursor with arrow key, and set some marker on cursor with space.
+We can move cursor with arrow key, and set some marker on cursor with space.  
 When `c` is clicked, it do something and prints wrong.
 
-There is a function that prints "Wrong" or "NICE" depend on one global byte data.
+There is a function that prints "Wrong" or "NICE" depend on one global byte data.  
 By finding reference of that global data, one function have some check routine and set that global data.
 ```c
 void **sub_7FF6BBA420D0()

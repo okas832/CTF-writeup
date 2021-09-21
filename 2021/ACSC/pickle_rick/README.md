@@ -2,13 +2,15 @@
 Reversing, 220 points
 
 ## Description
+```
 I found a suspicious pickle file with a script...
 ,
 Wait, who is Pickle Rick?
+```
 [Download](./pickle_rick.tar.gz)
 
 ## Analysis
-Using pickletools, we can read the bytecode of it.
+Using pickletools, we can read the bytecode of it.  
 Summarizing the bytecodes,
 ```
 1. Print Big Pickle Rick and some interaction with user
@@ -71,9 +73,9 @@ Summarizing the bytecodes,
 ...
 ```
 
-Parse and build binary tree is easy. But need one more step because need to analyze functions in `something_suspicious.py`
-Pickle saves python function in raw data of `py_object`. We can make pyc file of it and use decompiler.
-But since it's too annoying, I chooses decompile this in my eyes and hands.
+Parse and build binary tree is easy. But need one more step because need to analyze functions in `something_suspicious.py`  
+Pickle saves python function in raw data of `py_object`. We can make pyc file of it and use decompiler.  
+But since it's too annoying, I chooses decompile this in my eyes and hands.  
 The result is this
 ```python
 # I know this is wrong, maybe, but can understand with some debugging with amazing_function
@@ -112,12 +114,12 @@ def mix(a):
     return arr
 ```
 
-First `mix` is apply to input. It does matrix multiply and modular in 257.
-After that, it apply `search` to each byte.
+First `mix` is apply to input. It does matrix multiply and modular in 257.  
+After that, it apply `search` to each byte.  
 Finally, it compare with some array and it should be same.
 
 # Solution
-Making inverse function of `search` is easy, bruteforce and make a table or find path of binary tree. I choosed 2nd.
+Making inverse function of `search` is easy, bruteforce and make a table or find path of binary tree. I choosed 2nd.  
 For function `mix`, find and multiply modular inverse of matrix will do. sympy will do that.
 
 See [solve.py](./solve.py)
