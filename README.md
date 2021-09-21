@@ -4,6 +4,17 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 
 ## List
 
+### 2021
+
+#### ACSC
+* [RSA stream](./2021/ACSC/rsa_stream)
+* [filtered](./2021/ACSC/filtered)
+* [sugar](./2021/ACSC/sugar)
+* [histogram](./2021/ACSC/histogram)
+* [Pickle Rick](./2021/ACSC/pickle_rick)
+* [encoder](./2021/ACSC/encoder)
+* [Tnzr](./2021/ACSC/tnzr)
+
 ### 2020
 
 #### InterKosenCTF

@@ -1,0 +1,9 @@
+from Crypto.Cipher import AES
+import binascii
+
+key = b"\xA1\x86\x28\x23\x14\xBB\x20\x35\x3F\xEA\x9F\xB3\xB0\x9E\xF6\xCD"
+c = b"\x5A\x50\x4B\x64\xD7\x2A\x3D\x4B\xA4\x0A\xA0\xFA\x8E\x32\xD3\x5D"
+iv = b"\x00" * 16
+
+cipher = AES.new(key, AES.MODE_CBC, iv)
+print(b"ACSC{" + binascii.hexlify(cipher.encrypt(c)) + b"}") 
