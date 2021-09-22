@@ -78,7 +78,7 @@ Pickle saves python function in raw data of `py_object`. We can make pyc file of
 But since it's too annoying, I chooses decompile this in my eyes and hands.  
 The result is this
 ```python
-# I know this is wrong, maybe, but can understand with some debugging with amazing_function
+# I know this is not same as original, maybe, but can guess with some debugging with amazing_function
 def search(a, b):
     c = 0
     try:
