@@ -8,7 +8,7 @@ Pwnable, 200 points
 [Download](./histogram.tar.gz)
 
 ## Vulnerability
-We can write NaN as input, and `ceil(nan)` returns 0.  
+We can give NaN as input, and `ceil(nan)` returns 0.  
 With these, `i` in `read_data` can be -1 so we can add 1 to memory which is on outside of `map`.
 
 ## Exploit
