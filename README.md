@@ -4,6 +4,10 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 
 ## List
 
+### 2022
+
+* [Bitcoins For Flags](./2022/1337UP/Bitcoins_For_Flags)
+
 ### 2021
 
 #### ACSC
@@ -14,6 +18,10 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 * [Pickle Rick](./2021/ACSC/pickle_rick)
 * [encoder](./2021/ACSC/encoder)
 * [Tnzr](./2021/ACSC/tnzr)
+
+#### InCTF
+* [find_plut0](./2021/InCTF/find_plut0)
+* [REplica](./2021/InCTF/REplica)
 
 ### 2020
 
