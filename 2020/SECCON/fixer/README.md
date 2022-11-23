@@ -482,7 +482,7 @@ b = 13611142019359843741091679554812914051545792465993098606064046040462991
 def calc(x):
     if x == 0:
             return 1
-    return ((x + 1) * a(x-1) + 7) & 0xFF
+    return ((x + 1) * calc(x-1) + 7) & 0xFF
 
 lst = []
 for i in range(26):
