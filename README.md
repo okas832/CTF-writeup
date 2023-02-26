@@ -4,6 +4,20 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 
 ## List
 
+### 2023
+
+#### ACSC
+* [ngo](./2023/acsc/ngo)
+* [pyso](./2023/acsc/pyso)
+* [serverless](./2023/acsc/serverless)
+* [snake](./2023/acsc/snake)
+
+### SECCON Final CTF
+
+* [whisky](./2023/seccon_final/whisky)
+* [paper_house](./2023/seccon_final/paper_house)
+* [check_in_abyss](./2023/seccon_final/check_in_abyss)
+
 ### 2022
 
 * [Bitcoins For Flags](./2022/1337UP/Bitcoins_For_Flags)
