@@ -1,3 +1,5 @@
+# aes_encrypt function does everything, other functions just return the object of first argument
+
 # calling diagram
 # wmemchr3
 #   wcspbrk2 - create table
