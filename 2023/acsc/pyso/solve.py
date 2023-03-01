@@ -1,3 +1,11 @@
+# calling diagram
+# wmemchr3
+#   wcspbrk2 - create table
+#   jn - strange encryption(maybe variant of RC4?) with table
+#   strpbrk3, strerror3, vfprintf3, iscntrl - one more strange encryption(Spritz?) with table
+# atexit3, swprintf2, iswprint2, _strrchr2 - compare between encrypted data and constant value
+
+# memory dump of table which wcspbrk2 made 
 a = """0x555555fc2d60:    0x05    0xc4    0x1f    0xe3    0xdf    0x61    0xed    0x69
 0x555555fc2d68:    0xaa    0x18    0x4b    0x63    0x46    0x29    0x9a    0xa5
 0x555555fc2d70:    0x21    0xfd    0xae    0x4d    0x9e    0xdb    0xbb    0x2c
@@ -36,13 +44,15 @@ for i in a.split("\n"):
     i = i.split("    ")[1:]
     i = list(map(lambda x: int(x, 16), i))
     lst = lst + i
-
+# jn
+# some random input, input does not affects the encryption flow.
 ipt = list(b"asdf" * (16))
 
 K = [0 for _ in range(0x100)]
 bef = 0
 
 log = []
+# if we know where and what value is xor-ed to, we can simply reverse the process
 
 for i in range(256):
     v5 = lst[i]
@@ -56,11 +66,10 @@ for i in range(256):
     ipt[v6 >> 2] ^= v6
     bef = v6
 
-    log.append((i, v6)) # log
+    log.append((i, v6)) # log 1
 
-
+# strpbrk3, strerror3, vfprintf3, iscntrl
 bef = [0, 0, 0, 0]
-
 log2 = []
 
 S = lst
@@ -76,11 +85,12 @@ for i in range(64):
     v8 = S[(v4 + S[(v2 + S[(v7 + bef[0]) & 0xFF]) & 0xFF]) & 0xFF]
     bef = [v8, v2, v4, v7]
 
-    log2.append(bef) # log
+    log2.append(bef) # log 2
     ipt[i] = (5889 * ((bef[0] ^ ipt[i]) + 2 * (bef[0] & ipt[i])) + 3584) & 0xFF
 
 
-
+# atexit3, swprintf2, iswprint2, _strrchr2
+# 64 hand copy? no problem
 ans = [0x100 - 0x73, # a3 + 0x73
        0x6D,         # a3 - 0x6D
        0x100 - 82,   # a3 + 82
@@ -149,13 +159,14 @@ ans = [0x100 - 0x73, # a3 + 0x73
        0x100 - 89,   # a3 + 89
        0x57]         # a3 ^ 0x57
 
+# reverse second encryption
 for i in range(64):
     for j in range(256):
         if ans[i] == (5889 * ((log2[i][0] ^ j) + 2 * (log2[i][0] & j)) + 3584) & 0xFF:
             break
     ans[i] = j
 
-
+# reverse first encryption
 for j in range(255, -1, -1):
     i, v6 = log[j]
 
@@ -163,6 +174,7 @@ for j in range(255, -1, -1):
     ans[i >> 2] ^= i
     if i ^ v6 > 3:
         ans[i >> 2] ^= ans[v6 >> 2]
+
 print(bytes(ans))
 
        
