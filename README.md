@@ -6,6 +6,13 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 
 ### 2023
 
+#### Zer0pts CTF
+
+* [decompile me](./2023/zer0pts/decompile_me)
+* [mimikyu](./2023/zer0pts/mimikyu)
+* [topology](./2023/zer0pts/topology)
+* [fvm](./2023/zer0pts/fvm)
+
 #### ACSC
 * [ngo](./2023/acsc/ngo)
 * [pyso](./2023/acsc/pyso)
