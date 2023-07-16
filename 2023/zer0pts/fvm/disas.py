@@ -96,22 +96,22 @@ while idx < 635:
         print("%03d : jump %03d"%(idx, idx + imm + 3))
         idx += 3
     elif op == 0x64:
-        print("%03d : j? %03d"%(idx, idx + imm + 3)) # I was too lazy, sorry
+        print("%03d : je %03d"%(idx, idx + imm + 3))
         idx += 3
     elif op == 0x65:
-        print("%03d : j? %03d"%(idx, idx + imm + 3))
+        print("%03d : jne %03d"%(idx, idx + imm + 3))
         idx += 3
     elif op == 0x66:
-        print("%03d : j? %03d"%(idx, idx + imm + 3))
+        print("%03d : jae %03d"%(idx, idx + imm + 3))
         idx += 3
     elif op == 0x67:
-        print("%03d : j? %03d"%(idx, idx + imm + 3))
+        print("%03d : ja %03d"%(idx, idx + imm + 3))
         idx += 3
     elif op == 0x68:
-        print("%03d : j? %03d"%(idx, idx + imm + 3))
+        print("%03d : jbe %03d"%(idx, idx + imm + 3))
         idx += 3
     elif op == 0x69:
-        print("%03d : j? %03d"%(idx, idx + imm + 3))
+        print("%03d : jb %03d"%(idx, idx + imm + 3))
         idx += 3
     elif op == 0x71:
         print("%03d : hlt"%(idx))
