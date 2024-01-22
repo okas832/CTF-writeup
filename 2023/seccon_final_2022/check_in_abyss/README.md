@@ -9,9 +9,9 @@
 
 ## Solution
 
-If we see `delver` binary, it raises System Management Interrupt (SMI) by send output to 0xB2 I/O port. Which means we should find the SMM code in the bios.
+`delver` binary raises System Management Interrupt (SMI) by send output to 0xB2 I/O port. Which means we should find the SMM code in the bios.
 
-In `0xFFFEFF4E` in bios, ther is a handler. And we can check there is a specific handler for `al == 0x77` at `0xFFFF01B1` and `al == 0xFF` at `0xFFFF0210`.
+In `0xFFFEFF4E` in bios, there is a handler. And we can check there is a specific handler for `al == 0x77` at `0xFFFF01B1` and `al == 0xFF` at `0xFFFF0210`.
 
 When `al == 0x77`, it schedules the table at `0xA1000` like stream cipher.
 When `a1 == 0xFF`, it encrypts the input and compare with the constant array.

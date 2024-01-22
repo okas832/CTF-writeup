@@ -6,6 +6,14 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 
 ### 2023
 
+### SECCON Final CTF 2023
+
+* [digicake](./2023/seccon_final_2023/digicake)
+* [ReMOV](./2023/seccon_final_2023/remov)
+* [efsbk](./2023/seccon_final_2023/efsbk)
+* [call](./2023/seccon_final_2023/call)
+* [bomberman](./2023/seccon_final_2023/bomberman)
+
 #### Zer0pts CTF
 
 * [decompile me](./2023/zer0pts/decompile_me)
@@ -19,11 +27,11 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 * [serverless](./2023/acsc/serverless)
 * [snake](./2023/acsc/snake)
 
-### SECCON Final CTF
+### SECCON Final CTF 2022
 
-* [whisky](./2023/seccon_final/whisky)
-* [paper_house](./2023/seccon_final/paper_house)
-* [check_in_abyss](./2023/seccon_final/check_in_abyss)
+* [whisky](./2023/seccon_final_2022/whisky)
+* [paper_house](./2023/seccon_final_2022/paper_house)
+* [check_in_abyss](./2023/seccon_final_2022/check_in_abyss)
 
 ### 2022
 
