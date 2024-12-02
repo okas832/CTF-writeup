@@ -4,6 +4,17 @@ This is my writeup for CTF challenges. Most of all will be reversing.
 
 ## List
 
+### 2024
+
+### BHMEA CTF 2024 Finals
+* [Breakout](./2024/BHMEA/Breakout)
+* [Broken VM](./2024/BHMEA/Broken_VM)
+* [IceID](./2024/BHMEA/IceID)
+* [Is that AI?](./2024/BHMEA/Is_that_AI)
+* [Save Files are Fun](./2024/BHMEA/Save_Files_are_Fun)
+* [Thats Not my Kind of Music](./2024/BHMEA/Thats_Not_my_Kind_of_Music)
+* [lliinnee](./2024/BHMEA/lliinnee)
+
 ### 2023
 
 ### SECCON Final CTF 2023
